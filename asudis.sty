@@ -1,0 +1,202 @@
+%
+% Dissertation style file by John Shumway.
+% Attempts to meet requirements of the Graduate College of Arizona State University
+% No guarantees - PLEASE CHECK FORMAT CAREFULLY!
+% 
+% Setup the page layout (8 1/2 x 11 one and one-half spaced page, for 12pt font)
+% 1.5" side margins, 1.00" top and bottom margins
+% 
+\setlength{\textwidth}{5.5in}
+\setlength{\textheight}{8.57in} %tweak
+
+\setlength{\topmargin}{0.0in} %relative to 1.0 inch default
+\setlength{\headheight}{0.0 in}
+\setlength{\headsep}{0.0 in}
+\setlength{\topskip}{0.0 in}
+
+\setlength{\oddsidemargin}{0.5in} %relative to 1.0 inch default
+\setlength{\evensidemargin}{0.5in} %relative to 1.0 inch default
+%
+%Define singlespace and doublespace commands for 12pt fonts.
+%
+\newcommand{\doublespace} {
+  \renewcommand{\baselinestretch}{1.66}\small\normalsize
+}
+\newcommand{\oneandhalfspace} {
+  \renewcommand{\baselinestretch}{1.24}\small\normalsize
+}
+\newcommand{\singlespace} {
+  \renewcommand{\baselinestretch}{0.9}\small\normalsize
+}
+\singlespace
+
+%
+% Title page.
+%
+% Define "\defensemonth" "\gradmonth" "\gradyear" commands for title page.
+\title{\tt$\backslash$\string title}
+\author{\tt$\backslash$\string author}
+\newcommand{\defensemonth}[1]{\renewcommand{\@defensemonth}{#1}}
+\newcommand{\@defensemonth}{\tt$\backslash$\string defensemonth}
+\newcommand{\gradmonth}[1]{\renewcommand{\@gradmonth}{#1}}
+\newcommand{\@gradmonth}{\tt$\backslash$\string gradmonth}
+\newcommand{\gradyear}[1]{\renewcommand{\@gradyear}{#1}}
+\newcommand{\@gradyear}{\tt$\backslash$\string gradyear}
+% Define "\chair" and \member commands for title page.
+\newcommand{\chair}[1]{\renewcommand{\@chair}{#1}}
+\newcommand{\@chair}{\tt$\backslash$\string chair}
+\newcommand{\memberOne}[1]{\renewcommand{\@memberOne}{#1}}
+\newcommand{\@memberOne}{\tt$\backslash$\string memberOne}
+\newcommand{\memberTwo}[1]{\renewcommand{\@memberTwo}{#1}}
+\newcommand{\@memberTwo}{\tt$\backslash$\string memberTwo}
+\newcommand{\memberThree}[1]{\renewcommand{\@memberThree}{#1}}
+\newcommand{\@memberThree}{\tt$\backslash$\string memberThree}
+\newcommand{\memberFour}[1]{\renewcommand{\@memberFour}{#1}}
+\newcommand{\@memberFour}{\tt$\backslash$\string memberFour}
+% Define "\degreeName" command for Title Page.
+% (should set to "Doctor of Philosophy")
+\newcommand{\degreeName}[1]{\renewcommand{\@degreeName}{#1}}
+\newcommand{\@degreeName}{\tt$\backslash$\string degreeName}
+%
+% Redefine maketitle
+\newlength{\fiveblanklines}\setlength{\fiveblanklines}{0.7 in}
+\newlength{\tenblanklines}\setlength{\tenblanklines}{1.5 in}
+\renewcommand\maketitle{
+  \enlargethispage{0.5in} %make extra room where page number would go
+  \thispagestyle{empty}
+  \begin{minipage}[t][9.0 in][t]{\linewidth}
+  \begin{center}
+    \@title\\ \ \\
+    by\\ \ \\
+    \@author
+  \end{center}
+  \vspace{\fiveblanklines}
+  \begin{center}
+    \singlespace
+	A Dissertation Presented in Partial Fulfillment\\
+	of the Requirement for the Degree\\
+	\@degreeName
+  \end{center}
+  \vspace{\tenblanklines}
+  \begin{center}
+    \singlespace
+    Approved \@defensemonth\ \@gradyear\ by the\\
+    Graduate Supervisory Committee:\\
+    \ \\
+    \@chair,  Chair\\
+    \@memberOne\\
+    \@memberTwo\\
+    \@memberThree\\
+    \@memberFour
+  \end{center}
+   \vfill
+   \begin{center}
+   \doublespace
+   ARIZONA STATE UNIVERSITY\\
+   \@gradmonth\ \@gradyear
+   \end{center} 
+\end{minipage}
+\clearpage
+}
+
+%
+% redefine abstract environment
+%
+\renewenvironment{abstract}{
+  \begin{center}
+    \doublespace
+    ABSTRACT
+  \end{center}
+} {
+  \clearpage
+}
+
+%
+% make acknowledgements environment
+%
+\newenvironment{acknowledgements}{
+  \begin{center}
+    \doublespace
+    ACKNOWLEDGEMENTS
+  \end{center}
+} {
+  \clearpage
+}
+
+%
+% define \dedicationpage
+%
+\newcommand{\dedicationpage}[1]{
+\clearpage\vspace*{0.5\textheight}
+\centerline{\itshape #1}\clearpage
+}
+
+%
+% Fix the table of contents
+%
+
+\def\tableofcontents{\clearpage\begin{center}TABLE OF CONTENTS\end{center}\@starttoc{toc}}
+\def\listoftables{\clearpage\begin{center}LIST OF TABLES\end{center}\@starttoc{lot}}
+\def\listoffigures{\clearpage\begin{center}LIST OF FIGURES\end{center}\@starttoc{lof}}
+% Put ellipses in chapter listings.
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\dotfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+\fi}
+% Command to add entry to table of contents.
+\newcommand{\labeltoc}[1]{
+  \addtocontents{toc}
+  {\protect\par\vspace*{0.5\baselineskip}
+    \par{\noindent\bfseries #1\vspace{-0.5\baselineskip}}\par}
+}  
+%
+% Change some of the rules for float placement.
+%
+\setcounter{topnumber}{2}          %Maximum 2 floats on top
+\setcounter{bottomnumber}{1}       %Maximum 1 float on bottom
+\renewcommand{\topfraction}{0.7}    %Top float max size is 70%
+\renewcommand{\bottomfraction}{0.7} %Bottom float max size is 70%
+
+
+%
+% Fix chapter and section formats
+%
+% Chapters names are all caps, centered under "Chapter N"
+\renewcommand{\@makechapterhead}[1]{
+\begin{center}
+Chapter \thechapter\\
+\uppercase\expandafter{#1}
+\end{center}
+}
+% Only numbers chapters and sections
+\setcounter{secnumdepth}{1}
+% Center section titles
+\renewcommand{\section}{\@startsection{section}{1}{0 in}{1em}{2em}{\centering}}
+% Center and italicize subsection titles
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0 in}{1em}{1em}{\centering\slshape}}
+
+%
+% Fix bibliography header.
+%
+\renewcommand\bibsection{
+\begin{center}\uppercase\expandafter{\bibname}\vspace{1em}\end{center}
+}
+
+%
+% Modify figure captions so that they print singlespace.
+%
+\renewcommand{\@makecaption}[2]{% #1 is e.g. Figure 1, #2 is captiontext
+  \singlespace
+  {\textbf{#1:} #2\par}
+}
