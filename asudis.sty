@@ -56,6 +56,7 @@
 \renewcommand\maketitle{
   \enlargethispage{0.5in} %make extra room where page number would go
   \thispagestyle{empty}
+  \noindent
   \begin{minipage}[t][9.0 in][t]{\linewidth}
   \begin{center}
     \@title\\ \ \\
@@ -140,6 +141,7 @@
 \setlength{\cftbeforetoctitleskip}{-3\baselineskip}
 \renewcommand{\cfttoctitlefont}{\hfill}
 \renewcommand{\cftaftertoctitle}{\hfill\ \\ \parbox{5.5in}{\flushright{Page}}}
+\setlength{\cftbeforetoctitleskip}{-0.85in}
 \setlength{\cftaftertoctitleskip}{-0.5\baselineskip}
 \renewcommand{\@cfttocfinish}{\restoregeometry\clearpage\afterpage{\lhead{}\rhead{}}}
 
@@ -147,12 +149,14 @@
 \setlength{\cftbeforeloftitleskip}{-3\baselineskip}
 \renewcommand{\cftloftitlefont}{\hfill}
 \renewcommand{\cftafterloftitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
+\setlength{\cftbeforeloftitleskip}{-0.85in}
 \setlength{\cftafterloftitleskip}{-0.5\baselineskip}
 
 \renewcommand{\listtablename}{LIST OF TABLES}
 \setlength{\cftbeforelottitleskip}{-3\baselineskip}
 \renewcommand{\cftlottitlefont}{\hfill}
 \renewcommand{\cftafterlottitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
+\setlength{\cftbeforelottitleskip}{-0.85in}
 \setlength{\cftafterlottitleskip}{-0.5\baselineskip}
 
 
@@ -200,7 +204,7 @@
 % Only numbers chapters and sections
 \setcounter{secnumdepth}{1}
 % Center section titles
-\renewcommand{\section}{\@startsection{section}{1}{0 in}{1em}{2em}{\centering}}
+\renewcommand{\section}{\@startsection{section}{1}{0 in}{1em}{1em}{\centering}}
 % Center and italicize subsection titles
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0 in}{1em}{1em}{\centering\slshape}}
 
