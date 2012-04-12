@@ -6,16 +6,8 @@
 % Setup the page layout (8 1/2 x 11 one and one-half spaced page, for 12pt font)
 % 1.5" side margins, 1.00" top and bottom margins
 % 
-\setlength{\textwidth}{5.5in}
-\setlength{\textheight}{8.57in} %tweak
-
-\setlength{\topmargin}{0.0in} %relative to 1.0 inch default
-\setlength{\headheight}{0.0 in}
-\setlength{\headsep}{0.0 in}
-\setlength{\topskip}{0.0 in}
-
-\setlength{\oddsidemargin}{0.5in} %relative to 1.0 inch default
-\setlength{\evensidemargin}{0.5in} %relative to 1.0 inch default
+%\usepackage[total={5.5in,9.0in},top=1.0in]{geometry} (in dis.tex file)
+\geometry{top=1.0in, bottom=1.0in, hmargin=1.5in, height=9in, includefoot}
 %
 %Define singlespace and doublespace commands for 12pt fonts.
 %
@@ -103,6 +95,7 @@
 % redefine abstract environment
 %
 \renewenvironment{abstract}{
+  \setcounter{page}{1}
   \begin{center}
     \doublespace
     ABSTRACT
@@ -135,9 +128,34 @@
 % Fix the table of contents
 %
 
-\def\tableofcontents{\clearpage\begin{center}TABLE OF CONTENTS\end{center}\@starttoc{toc}}
-\def\listoftables{\clearpage\begin{center}LIST OF TABLES\end{center}\@starttoc{lot}}
-\def\listoffigures{\clearpage\begin{center}LIST OF FIGURES\end{center}\@starttoc{lof}}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\newcommand{\cftlabel}{CHAPTER}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\@cfttocstart}{ 
+  \newgeometry{top=1.0in, bottom=1.0in, hmargin=1.5in, height=9in, includefoot, includehead}
+  \doublespace
+  \pagestyle{fancyplain}
+  \afterpage{\lhead{\cftlabel}\rhead{Page}}
+}
+\setlength{\cftbeforetoctitleskip}{-3\baselineskip}
+\renewcommand{\cfttoctitlefont}{\hfill}
+\renewcommand{\cftaftertoctitle}{\hfill\ \\ \parbox{5.5in}{\flushright{Page}}}
+\setlength{\cftaftertoctitleskip}{-0.5\baselineskip}
+\renewcommand{\@cfttocfinish}{\restoregeometry\clearpage\afterpage{\lhead{}\rhead{}}}
+
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\setlength{\cftbeforeloftitleskip}{-3\baselineskip}
+\renewcommand{\cftloftitlefont}{\hfill}
+\renewcommand{\cftafterloftitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
+\setlength{\cftafterloftitleskip}{-0.5\baselineskip}
+
+\renewcommand{\listtablename}{LIST OF TABLES}
+\setlength{\cftbeforelottitleskip}{-3\baselineskip}
+\renewcommand{\cftlottitlefont}{\hfill}
+\renewcommand{\cftafterlottitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
+\setlength{\cftafterlottitleskip}{-0.5\baselineskip}
+
+
 % Put ellipses in chapter listings.
 \renewcommand*\l@chapter[2]{%
   \ifnum \c@tocdepth >\m@ne
@@ -175,8 +193,8 @@
 % Chapters names are all caps, centered under "Chapter N"
 \renewcommand{\@makechapterhead}[1]{
 \begin{center}
-Chapter \thechapter\\
-\uppercase\expandafter{#1}
+\chaptername\ \thechapter\vspace{\baselineskip}\\
+\uppercase\expandafter{#1}\vspace{\baselineskip}
 \end{center}
 }
 % Only numbers chapters and sections
