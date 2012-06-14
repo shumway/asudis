@@ -169,10 +169,10 @@
     \begingroup
       \parindent \z@ \rightskip \@pnumwidth
       \parfillskip -\@pnumwidth
-      \leavevmode \bfseries
+      \leavevmode %\bfseries
       \advance\leftskip\@tempdima
       \hskip -\leftskip
-      #1\nobreak\dotfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \uppercase{#1}\nobreak\dotfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
       \penalty\@highpenalty
     \endgroup
 \fi}
