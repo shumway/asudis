@@ -1,5 +1,3 @@
-%Note: any items denoted by xxxx ... xxxx are ``fix-me'' items.
-
 \documentclass[12pt,letterpaper]{report}
 \usepackage{natbib}
 \usepackage{geometry}
@@ -12,87 +10,48 @@
 \usepackage{tocloft}
 \usepackage{asudis}
 
-%-----------------------Packages I use. JL
-\usepackage{caption}
-
-%-----------------------Commands I use. JL
-\newcommand{\pd}{\partial} % shorter.
-\newcommand{\pr}{\prime} % shorter.
-\newcommand{\ket}[1]{\left| #1 \rangle\right.} % for Dirac kets 
-\newcommand{\bra}[1]{\langle #1 |} % for Dirac bras
-\newcommand{\braket}[2]{\langle #1 \vphantom{#2} |
-  #2 \vphantom{#1} \rangle} % for Dirac brackets
-\newcommand{\ketbra}[2]{| #1 \vphantom{#2} \rangle 
-  \!\ \!\langle #2 \vphantom{#1} |} % for Dirac ketbras
-\newcommand{\matrixel}[3]{\langle #1 \vphantom{#2#3} |
- #2 | #3 \vphantom{#1#2} \rangle} % for Dirac matrix elements
-% for momentum integrals
-\newcommand{\pint}[2]{\int\!\!\frac{d^{#1}#2}{(2\pi)^{#1}}}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\newcommand{\gvec}[1]{\boldsymbol{#1}}
-\newcommand{\up}{\uparrow}
-\newcommand{\down}{\downarrow}
-
-\defcitealias{national2012nuclear}{The NP2010 Committee, 2012}
-
 \begin{document}
 %-----------------------front matter
 \pagenumbering{roman}
-\title{Quantum Monte Carlo Calculations of Light Nuclei with Non-Local 
-Potentials}
-\author{Joel E. Lynn}
+\title{Your Title}
+\author{Your name}
 \degreeName{Doctor of Philosophy}
-\defensemonth{April}
-\gradmonth{May}
-\gradyear{2013}
-\chair{Kevin Schmidt}
-\memberOne{Ricardo Alarc\'on}
-\memberTwo{Richard Lebed}
-\memberThree{Igor Shovkovy}
-\memberFour{John Shumway}
+\defensemonth{Some month}
+\gradmonth{Some other month}
+\gradyear{Some year}
+\chair{Your chair}
+\memberOne{Your first member}
+\memberTwo{Your second member}
+\memberThree{Your third member}
+\memberFour{Your fourth member}
 
 \maketitle
 \doublespace
 \include{abstract}
-\dedicationpage{I dedicate this thesis to my family, who are the foundation
-upon which everything else is built. 
-\linebreak
-\linebreak
-To my wife and best 
-friend, Jessica: You have always been and always will be my partner in all 
-things.  Without your
-love, support, and infinite patience none of this would have happened: I 
-would not be who I am today without you.  We are two birds getting lost upon 
-their way.  
-\linebreak
-\linebreak
-To my son, Isaac: You are a continuing
-source of inspiration.  You ask me tough questions, like ``what did the 
-universe look like before the big bang?''  Seeing your curiosity about our world
-sharpens my own.
-\linebreak
-\linebreak
-To my son, Owen: Your energy and spirit are rejuvenating.  At the end of a day
-when nothing else may have worked or made sense, coming home and hearing you
-call my name as you ran to the door set everything right.
-\linebreak
-\linebreak
-To my daughter, Kelsey: Your smile and laughter brightened many cloudy days.
-You are my Telsey-bird, Telsey-bird oh so sweet!  
-}
+\dedicationpage{}
 \include{ack}
 \tableofcontents
+% This puts the word "Page" right justified above everything else.
 \addtocontents{toc}{~\hfill Page\par}
+% Asking LaTeX for a new page here guarantees that the LOF is on a separate page
+% after the TOC ends.
 \newpage
+% Making the LOT and LOF "parts" rather than chapters gets them indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
 \addcontentsline{toc}{part}{LIST OF TABLES}
 \renewcommand{\cftlabel}{Table}
 \listoftables
+% This gets the headers for the LOT right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
 \addtocontents{lot}{Table~\hfill Page \par}
 \newpage
 \addcontentsline{toc}{part}{LIST OF FIGURES}
 \addtocontents{toc}{CHAPTER \par}
 \renewcommand{\cftlabel}{Figure}
 \listoffigures
+% This gets the headers for the LOF right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
 \addtocontents{lof}{Figure~\hfill Page \par}
 %-----------------------body
 \doublespace
@@ -105,10 +64,12 @@ You are my Telsey-bird, Telsey-bird oh so sweet!
 \include{chapter6}
 %-----------------------back matter
 {\singlespace
+% Making the references a "part" rather than a chapter gets it indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
 \addcontentsline{toc}{part}{REFERENCES}
 \bibliographystyle{asudis}
 \bibliography{dis}}
-%\labeltoc{Appendix}
 \renewcommand{\chaptername}{APPENDIX}
 \addtocontents{toc}{APPENDIX \par}
 \appendix
