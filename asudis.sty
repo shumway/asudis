@@ -1,13 +1,13 @@
-%
 % Dissertation style file by John Shumway.
 % Attempts to meet requirements of the Graduate College of Arizona State University
 % No guarantees - PLEASE CHECK FORMAT CAREFULLY!
 % 
 % Setup the page layout (8 1/2 x 11 one and one-half spaced page, for 12pt font)
-% 1.5" side margins, 1.00" top and bottom margins
+% 1.25" side margins, 1.00" top and bottom margins
 % 
 %\usepackage[total={5.5in,9.0in},top=1.0in]{geometry} (in dis.tex file)
-\geometry{top=1.0in, bottom=1.0in, hmargin=1.5in, height=9in, includefoot}
+\geometry{top=71.0truept,hmargin=90.344truept,height=648.0truept,includefoot,
+letterpaper}%,showframe,showcrop}
 %
 %Define singlespace and doublespace commands for 12pt fonts.
 %
@@ -57,7 +57,7 @@
   \enlargethispage{0.5in} %make extra room where page number would go
   \thispagestyle{empty}
   \noindent
-  \begin{minipage}[t][9.0 in][t]{\linewidth}
+  \begin{minipage}[t][647.0truept][t]{\linewidth}
   \begin{center}
     \@title\\ \ \\
     by\\ \ \\
@@ -120,75 +120,155 @@
 %
 % define \dedicationpage
 %
+%\newcommand{\dedicationpage}[1]{
+%\clearpage\vspace*{0.5\textheight}
+%\centerline{\itshape #1}\clearpage
 \newcommand{\dedicationpage}[1]{
-\clearpage\vspace*{0.5\textheight}
-\centerline{\itshape #1}\clearpage
+\begin{center}
+   \doublespace
+   {\itshape #1}
+\end{center}
+\clearpage
 }
 
 %
 % Fix the table of contents
 %
 
-\renewcommand{\contentsname}{TABLE OF CONTENTS}
-\newcommand{\cftlabel}{CHAPTER}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\@cfttocstart}{ 
-  \newgeometry{top=1.0in, bottom=1.0in, hmargin=1.5in, height=9in, includefoot, includehead}
-  \doublespace
-  \pagestyle{fancyplain}
-  \afterpage{\lhead{\cftlabel}\rhead{Page}}
-}
-\setlength{\cftbeforetoctitleskip}{-3\baselineskip}
-\renewcommand{\cfttoctitlefont}{\hfill}
-\renewcommand{\cftaftertoctitle}{\hfill\ \\ \parbox{5.5in}{\flushright{Page}}}
-\setlength{\cftbeforetoctitleskip}{-0.85in}
-\setlength{\cftaftertoctitleskip}{-0.5\baselineskip}
-\renewcommand{\@cfttocfinish}{\restoregeometry\clearpage\afterpage{\lhead{}\rhead{}}}
+%Get leader dots right.  They should all be spaced the same and need to be
+%added for chapters and parts.
 
-\renewcommand{\listfigurename}{LIST OF FIGURES}
-\setlength{\cftbeforeloftitleskip}{-3\baselineskip}
-\renewcommand{\cftloftitlefont}{\hfill}
-\renewcommand{\cftafterloftitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
-\setlength{\cftbeforeloftitleskip}{-0.85in}
-\setlength{\cftafterloftitleskip}{-0.5\baselineskip}
+\renewcommand{\cftchapdotsep}{1.7}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+
+\renewcommand{\cftpartdotsep}{1.7}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftpartdotsep}}
+
+\renewcommand{\cftsecdotsep}{1.7}
+\renewcommand{\cftsubsecdotsep}{1.7}
+\renewcommand{\cfttabdotsep}{1.7}
+\renewcommand{\cftfigdotsep}{1.7}
+
+%Fonts for the chapter titles and part titles.
+
+\renewcommand{\cftchapfont}{\rm}
+\renewcommand{\cftpartfont}{\rm}
+\renewcommand{\cftchappagefont}{\rm}
+\renewcommand{\cftpartpagefont}{\rm}
+
+%Indentations
+\cftsetindents{chapter}{1.5em}{1.5em}
+\cftsetindents{section}{3.0em}{2.3em}
+\cftsetindents{subsection}{5.3em}{3.2em}
+
+%Spacing between entries is taken care of by the double-spacing in this 
+%section, so no need for extra space before chapter or part entries.
+
+\setlength{\cftbeforepartskip}{0truept}
+\setlength{\cftbeforechapskip}{0truept}
+
+%Get the title for the TOC normal sized, centered, and at the right height.
+
+\setlength{\cftbeforetoctitleskip}{-64.0truept}
+\setlength{\cftaftertoctitleskip}{0truept}
+
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\rm}
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+\newcommand{\cftlabel}{CHAPTER}
+
+%Get rid of the header underline.
+\renewcommand{\headrulewidth}{0pt}
+
+%Get the header on subsequent pages right.
+\renewcommand{\@cfttocstart}{ 
+   \newgeometry{top=71.0truept,hmargin=90.344truept,height=649truept,
+   includehead,includefoot,letterpaper}%,showcrop,showframe}
+
+   \doublespace
+   \pagestyle{fancyplain}
+   \afterpage{\lhead{\cftlabel}\rhead{Page}}
+}
+
+\renewcommand{\@cfttocfinish}{
+   \restoregeometry\clearpage\afterpage{\lhead{}\rhead{}}
+}
+
+%Get the title for the LOT normal sized, centered, and at the right height.
 
 \renewcommand{\listtablename}{LIST OF TABLES}
-\setlength{\cftbeforelottitleskip}{-3\baselineskip}
-\renewcommand{\cftlottitlefont}{\hfill}
-\renewcommand{\cftafterlottitle}{\hfill\ \\ \parbox{5.5in}{\cftlabel\hfill Page}}
-\setlength{\cftbeforelottitleskip}{-0.85in}
-\setlength{\cftafterlottitleskip}{-0.5\baselineskip}
+\setlength{\cftbeforelottitleskip}{-64.0truept}
+\setlength{\cftafterlottitleskip}{0truept}
+\renewcommand{\cftlottitlefont}{\hfill\normalsize\rm}
+\renewcommand{\cftafterlottitle}{\hfill}
+ 
+%Get the title for the LOF normal sized, centered, and at the right height.
 
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\setlength{\cftbeforeloftitleskip}{-64.0truept}
+\setlength{\cftafterloftitleskip}{0truept}
+\renewcommand{\cftloftitlefont}{\hfill\normalsize\rm}
+\renewcommand{\cftafterloftitle}{\hfill}
+ 
+%Here is a hack.  The report class automatically adds a bit of extra vertical
+%space between table and figure entries in the LOT and LOF if they are from 
+%different chapters.  I have simply commmented out the lines in the definition
+%of \@chapter which do this.  As far as I can tell, the tocloft package doesn't
+%have a command for this so a hack is necessary.
+
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                        \refstepcounter{chapter}%
+                        \typeout{\@chapapp\space\thechapter.}%
+                        \addcontentsline{toc}{chapter}%
+                        {\protect\numberline{\thechapter}#1}%
+                    \else
+                        \addcontentsline{toc}{chapter}{#1}%
+                    \fi
+                    \chaptermark{#1}%
+                    %These two lines below are commented out.
+                    %\addtocontents{lof}{\protect\addvspace{10\p@}}%
+                    %\addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
 
 % Put ellipses in chapter listings.
-\renewcommand*\l@chapter[2]{%
-  \ifnum \c@tocdepth >\m@ne
-    \addpenalty{-\@highpenalty}%
-    \vskip 1.0em \@plus\p@
-    \setlength\@tempdima{1.5em}%
-    \begingroup
-      \parindent \z@ \rightskip \@pnumwidth
-      \parfillskip -\@pnumwidth
-      \leavevmode %\bfseries
-      \advance\leftskip\@tempdima
-      \hskip -\leftskip
-      \uppercase{#1}\nobreak\dotfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-      \penalty\@highpenalty
-    \endgroup
-\fi}
+% \renewcommand*\l@chapter[2]{%
+%   \ifnum \c@tocdepth >\m@ne
+%     \addpenalty{-\@highpenalty}%
+%     \vskip 1.0em \@plus\p@
+%     \setlength\@tempdima{1.5em}%
+%     \begingroup
+%       \parindent \z@ \rightskip \@pnumwidth
+%       \parfillskip -\@pnumwidth
+%       \leavevmode %\bfseries
+%       \advance\leftskip\@tempdima
+%       \hskip -\leftskip
+%       \uppercase{#1}\nobreak\dotfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+%       \penalty\@highpenalty
+%     \endgroup
+% \fi}
+
 % Command to add entry to table of contents.
-\newcommand{\labeltoc}[1]{
-  \addtocontents{toc}
-  {\protect\par\vspace*{0.5\baselineskip}
-    \par{\noindent \uppercase{#1}\vspace{-0.5\baselineskip}}\par}
-}  
+%\newcommand{\labeltoc}[1]{
+%  \addtocontents{toc}
+%  {\protect\par\vspace*{0.5\baselineskip}
+%    \par{\noindent \uppercase{#1}\vspace{-0.5\baselineskip}}\par}
+%}  
 %
 % Change some of the rules for float placement.
 %
 \setcounter{topnumber}{2}          %Maximum 2 floats on top
 \setcounter{bottomnumber}{1}       %Maximum 1 float on bottom
-\renewcommand{\topfraction}{0.7}    %Top float max size is 70%
-\renewcommand{\bottomfraction}{0.7} %Bottom float max size is 70%
+%\renewcommand{\topfraction}{0.7}    %Top float max size is 70%
+%\renewcommand{\bottomfraction}{0.7} %Bottom float max size is 70%
+\renewcommand{\topfraction}{0.9}    %Top float max size is 70%
+\renewcommand{\bottomfraction}{0.8} %Bottom float max size is 70%
+\renewcommand{\floatpagefraction}{0.7}
 
 
 %
@@ -206,7 +286,22 @@
 % Center section titles
 \renewcommand{\section}{\@startsection{section}{1}{0 in}{1em}{1em}{\centering}}
 % Center and italicize subsection titles
-\renewcommand{\subsection}{\@startsection{subsection}{2}{0 in}{1em}{1em}{\centering\slshape}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0 in}{1em}{1em}
+{\centering\slshape}}
+
+%This is a bit of a hack.  I couldn't figure out a better way, but surely there
+%is one.  What I want is for the title page of the appendix to appear with
+%just one double space between the words "Appendix A" and the title.  So, here,
+%I redefine the command with our \singlespace command, and then inside the 
+%actual appendix, I use \doublespace.  This gets the spacing of the appendix
+%title page right.
+
+\renewcommand\appendix{\par
+   \setcounter{chapter}{0}%
+   \setcounter{section}{0}%
+   \gdef\@chapapp{\appendixname}%
+   \gdef\thechapter{\@Alph\c@chapter}
+   \singlespace}
 
 %
 % Fix bibliography header.
