@@ -1,5 +1,7 @@
-About 80% of the implementation of the ASU dissertation format guidelines.
+We've used this for about a half-dozen Ph. D. dissertations. The current files pass the format requirements 
+in spring 2013.
 
-More instructions to come.
+Please contribute your own corrections. By sharing this we are making things easier for all students using 
+LaTeX for the dissertations at ASU.
 
-Table of contents needs to be fixed to satisfy ASU.
+Feel free to email john.shumwayjr@gmail.com if you are a graduating ASU student with LaTeX questions.
