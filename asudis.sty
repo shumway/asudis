@@ -49,9 +49,13 @@ letterpaper}%,showframe,showcrop}
 \newcommand{\memberFour}[1]{\renewcommand{\@memberFour}{#1}}
 \newcommand{\@memberFour}{\tt$\backslash$\string memberFour}
 % Define "\degreeName" command for Title Page.
-% (should set to "Doctor of Philosophy")
+% (should set to degree title eg "Doctor of Philosophy")
 \newcommand{\degreeName}[1]{\renewcommand{\@degreeName}{#1}}
 \newcommand{\@degreeName}{\tt$\backslash$\string degreeName}
+% Define "\paperType" command for Title Page.
+% (should set to "Dissertation" or "Thesis)
+\newcommand{\paperType}[1]{\renewcommand{\@paperType}{#1}}
+\newcommand{\@paperType}{\tt$\backslash$\string paperType}
 %
 % Redefine maketitle
 \newlength{\fiveblanklines}\setlength{\fiveblanklines}{0.7 in}
@@ -69,7 +73,7 @@ letterpaper}%,showframe,showcrop}
   \vspace{\fiveblanklines}
   \begin{center}
     \singlespace
-	A Dissertation Presented in Partial Fulfillment\\
+	A \@paperType\ Presented in Partial Fulfillment\\
 	of the Requirement for the Degree\\
 	\@degreeName
   \end{center}
