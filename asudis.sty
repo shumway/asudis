@@ -312,3 +312,15 @@ letterpaper}%,showframe,showcrop}
   \singlespace
   {\textbf{#1:} #2\par}
 }
+
+%
+% Modify footnotes to be single spaced per footnote, double in between
+%
+
+\setlength{\footnotesep}{\baselineskip} %double space between footnotes
+
+\let\oldfootnoterule\footnoterule %dont put a gap between the line and the first footnote
+\def\footnoterule{\oldfootnoterule\vspace{-0.2\baselineskip}}
+
+\let\oldfn\footnote   %single space individual footnotes
+\renewcommand{\footnote}[1]{\singlespace\oldfn{#1}\doublespace}
