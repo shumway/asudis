@@ -324,3 +324,10 @@ letterpaper}%,showframe,showcrop}
 
 \let\oldfn\footnote   %single space individual footnotes
 \renewcommand{\footnote}[1]{\singlespace\oldfn{#1}\doublespace}
+
+%
+% Set penalties for orphans and windows extremely high to prevent them
+%
+\widowpenalty=10000
+\clubpenalty=10000
+
