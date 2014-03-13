@@ -28,11 +28,14 @@ letterpaper}%,showframe,showcrop}
 %
 % Title page.
 %
-% Define "\defensemonth" "\gradmonth" "\gradyear" commands for title page.
+% Define "\defensemonth" "\defenseyear" "\gradmonth" "\gradyear" commands for 
+% title page.
 \title{\tt$\backslash$\string title}
 \author{\tt$\backslash$\string author}
 \newcommand{\defensemonth}[1]{\renewcommand{\@defensemonth}{#1}}
 \newcommand{\@defensemonth}{\tt$\backslash$\string defensemonth}
+\newcommand{\defenseyear}[1]{\renewcommand{\@defenseyear}{#1}}
+\newcommand{\@defenseyear}{\tt$\backslash$\string defenseyear}
 \newcommand{\gradmonth}[1]{\renewcommand{\@gradmonth}{#1}}
 \newcommand{\@gradmonth}{\tt$\backslash$\string gradmonth}
 \newcommand{\gradyear}[1]{\renewcommand{\@gradyear}{#1}}
@@ -80,7 +83,7 @@ letterpaper}%,showframe,showcrop}
   \vspace{\tenblanklines}
   \begin{center}
     \singlespace
-    Approved \@defensemonth\ \@gradyear\ by the\\
+    Approved \@defensemonth\ \@defenseyear\ by the\\
     Graduate Supervisory Committee:\\
     \ \\
     \@chair,  Chair\\
