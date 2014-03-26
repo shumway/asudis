@@ -1,4 +1,5 @@
-Please see [the asudis project website](http://shumway.github.io/asudis/).
+Please see [the asudis project website](http://shumway.github.io/asudis/)
+and please post your questions to [the asudis forum](https://groups.google.com/forum/#!forum/asudis).
 
 We've used this for about a half-dozen Ph. D. dissertations. The current files pass the format requirements 
 in spring 2013.
