@@ -1,3 +1,5 @@
+Please see [the asudis project website](http://shumway.github.io/asudis/).
+
 We've used this for about a half-dozen Ph. D. dissertations. The current files pass the format requirements 
 in spring 2013.
 
