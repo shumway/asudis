@@ -101,7 +101,7 @@ header {
   position:fixed;
 }
 
-header ul {
+header ul.getCode {
   list-style:none;
   height:40px;
   
@@ -128,7 +128,7 @@ header li {
   height:40px;
 }
 
-header ul a {
+header ul.getCode a {
   line-height:1;
   font-size:11px;
   color:#999;
@@ -143,17 +143,17 @@ strong {
   font-weight:700;
 }
 
-header ul li + li {
+header ul.getCode li + li {
   width:88px;
   border-left:1px solid #fff;
 }
 
-header ul li + li + li {
+header ul.getCode li + li + li {
   border-right:none;
   width:89px;
 }
 
-header ul a strong {
+header ul.getCode a strong {
   font-size:14px;
   display:block;
   color:#222;
@@ -211,7 +211,7 @@ footer {
     display:inline;
   }
   
-  header ul {
+  header ul.getCode {
     position:absolute;
     right:50px;
     top:52px;
@@ -227,7 +227,7 @@ footer {
     padding:0;
   }
   
-  header ul, header p.view {
+  header ul.getCode, header p.view {
     position:static;
   }
   
@@ -241,7 +241,7 @@ footer {
     padding:15px;
   }
   
-  header ul {
+  header ul.getCode {
     display:none;
   }
 }
