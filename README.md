@@ -1,14 +1,13 @@
+
+
 Please see [the asudis project website](http://shumway.github.io/asudis/)
 and please post your questions to [the asudis forum](https://groups.google.com/forum/#!forum/asudis).
 
 We've used this for about a half-dozen Ph. D. dissertations. The current files pass the format requirements 
-in spring 2013.
+as of summer 2014.
 
 Please contribute your own corrections. By sharing this we are making things easier for all students using 
 LaTeX for the dissertations at ASU.
-
-To see an example of a dissertation formatted using these LaTeX style files, 
-click [here](http://www.public.asu.edu/~jelynn/dis.pdf).
 
 Here are some recent examples of dissertations formatted with these LaTeX style files:
 
@@ -23,3 +22,14 @@ Feel free to email john.shumwayjr@gmail.com if you are a graduating ASU student 
 [LiuPhD]: <http://hdl.handle.net/2286/R.I.15903> "Jianheng Liu Ph. D. Dissertation"
 [LynnPhD]: <http://hdl.handle.net/2286/R.I.17733> "Joel Lynn Ph. D. Dissertation"
 [HinkelPhD]: <http://hdl.handle.net/2286/mgqa3h74y0l> "Natalie Hinkel Ph. D. Dissertation"
+
+# Current status of automated build
+
+We are starting to use jenkins-ci to provide current examples an catch
+problems quickly. If you don't know what this means, don't worry about it.
+It's just a cool, automated way to check that the files are working and
+that sample documents are up-to-date.
+
+The current branch continous integration status on travis-ci.org:
+[![Build Status](https://travis-ci.org/shumway/asudis.png)](https://travis-ci.org/shumway/asudis)
+
