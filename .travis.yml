@@ -1,5 +1,15 @@
+# This file is used by http://travis-ci.org/shumway/asudis
+# It causes the files to automatically build each time someone pushes
+# a change to GitHub, to help catch problems quickly.
+
 # Language should be latex, but we'll use python for now.
 language: python
+
 python:
- - "2.7"
+    - "2.7"
+
+# We need to install pdflatex in the build environment.
+before_install:
+ - sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra
+
 script: pdflatex dis.tex
