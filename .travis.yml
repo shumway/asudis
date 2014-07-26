@@ -12,4 +12,6 @@ python:
 before_install:
  - sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra
 
-script: pdflatex dis.tex
+script: 
+    - >
+        pdflatex -interaction=nonstopmode dis.tex
