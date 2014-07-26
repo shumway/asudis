@@ -17,6 +17,9 @@ letterpaper}%,showframe,showcrop}
 \newcommand{\doublespace} {
   \renewcommand{\baselinestretch}{1.66}\small\normalsize
 }
+\newcommand{\exactdoublespace} {
+  \renewcommand{\baselinestretch}{1.8}\small\normalsize
+}
 \newcommand{\oneandhalfspace} {
   \renewcommand{\baselinestretch}{1.24}\small\normalsize
 }
@@ -68,11 +71,13 @@ letterpaper}%,showframe,showcrop}
   \thispagestyle{empty}
   \noindent
   \begin{minipage}[t][647.0truept][t]{\linewidth}
+  \exactdoublespace
   \begin{center}
-    \@title\\ \ \\
-    by\\ \ \\
+    \@title\\
+    by\\
     \@author
   \end{center}
+  \singlespace
   \vspace{\fiveblanklines}
   \begin{center}
     \singlespace
