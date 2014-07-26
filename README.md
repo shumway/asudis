@@ -1,4 +1,4 @@
-
+### Introduction
 
 Please see [the asudis project website](http://shumway.github.io/asudis/)
 and please post your questions to [the asudis forum](https://groups.google.com/forum/#!forum/asudis).
@@ -8,6 +8,9 @@ as of summer 2014.
 
 Please contribute your own corrections. By sharing this we are making things easier for all students using 
 LaTeX for the dissertations at ASU.
+
+
+### Examples 
 
 Here are some recent examples of dissertations formatted with these LaTeX style files:
 
@@ -23,7 +26,7 @@ Feel free to email john.shumwayjr@gmail.com if you are a graduating ASU student 
 [LynnPhD]: <http://hdl.handle.net/2286/R.I.17733> "Joel Lynn Ph. D. Dissertation"
 [HinkelPhD]: <http://hdl.handle.net/2286/mgqa3h74y0l> "Natalie Hinkel Ph. D. Dissertation"
 
-# Current status of automated build
+### Current status of automated build
 
 We are starting to use jenkins-ci to provide current examples an catch
 problems quickly. If you don't know what this means, don't worry about it.
