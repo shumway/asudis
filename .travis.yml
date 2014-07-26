@@ -1,0 +1,5 @@
+# Language should be latex, but we'll use python for now.
+language: python
+python:
+ - "2.7"
+script: pdflatex dis.tex
