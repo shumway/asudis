@@ -27,6 +27,7 @@ deploy:
   provider: releases
   api_key:
     secure: Kk2Cz2E2LLM8ehNDsEf0d97M2awm8tAFOq82SxY0QWvDcF31f5KcwRdyEQtfdgA66MQaErwyHUWKwfTEEKxaHrO019nZ+RQ4k/Qw6m2nL4BwPV2bK8N21i/YHBH7WjGLpv5PO7dspgwFG++9ZdX2agukz8KxoyV/aIf8/QIT2yg=
+  skip_cleanup: true
   file: dis.pdf
   on:
     repo: shumway/asudis
