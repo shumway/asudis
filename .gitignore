@@ -6,4 +6,6 @@
 *.log
 *.lot
 *.toc
+*.out
+auto/
 dis.pdf
