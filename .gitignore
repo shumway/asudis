@@ -1,3 +1,4 @@
+*~
 *.aux
 *.bbl
 *.blg
@@ -5,4 +6,6 @@
 *.log
 *.lot
 *.toc
+*.out
+auto/
 dis.pdf
