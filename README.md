@@ -1,12 +1,20 @@
 ### Introduction
 
-Please see [the asudis project website](http://shumway.github.io/asudis/)
-and please post your questions to [the asudis forum](https://groups.google.com/forum/#!forum/asudis).
+*Note*: Robert Cutter has written a very nice LaTeX package that is more modern than this one:
+[GarenSidonius/ASU-Dissertation-Template](https://github.com/GarenSidonius/ASU-Dissertation-Template).
+I like what he has done! My template is based on my 1999 UIUC disseration, rewritten to meet ASU's
+guidelines. Robert has a great background in electronic document preparation and lots of experience
+helping people use new technologies. I think either package should work well, so please use whatever
+you find easiest and most comfortable for you.
 
-We've used this for about a half-dozen Ph. D. dissertations. The current files pass the format requirements 
-as of summer 2014.
+Please post your questions to [the asudis forum](https://groups.google.com/forum/#!forum/asudis).
+I would suggest using that forum for both this package as well as Robert Cutter's ASU-Dissertation-Template,
+as it would be great to have a common forum for discussions.
 
-Please contribute your own corrections. By sharing this we are making things easier for all students using 
+I've used this template with about a half-dozen students' Ph. D. dissertations, and I believe many more people have
+used it. The current files pass the format requirements as of fall 2014.
+
+Please contribute your own corrections. By sharing this we are trying to make things easier for all students using 
 LaTeX for the dissertations at ASU.
 
 
