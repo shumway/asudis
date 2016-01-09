@@ -27,6 +27,7 @@ Here are some recent examples of dissertations formatted with these LaTeX style 
 * Dr. Joel Lynn, ["Quantum Monte Carlo Calculations of Light Nuclei with Non-Local Potentials"][LynnPhD], Physics 2013.
 * Dr. Natalie Hinkel, ["Stellar Abundances in the Solar Neighborhood"][HinkelPhd], Astrophysics 2012.
 * Jeremy Wright, ["Topic Chains for Determining Risk of Unauthorized Information Transfer"][WrightMS], Computer Science, 2014.
+* Dr. Avishek Kumar, ["Structural Modelling of Two Dimensional Amorphous Materials"][KumarPhD], Physics 2014 
 
 Feel free to email john.shumwayjr@gmail.com if you are a graduating ASU student with LaTeX questions.
 
@@ -35,6 +36,7 @@ Feel free to email john.shumwayjr@gmail.com if you are a graduating ASU student 
 [LynnPhD]: <http://hdl.handle.net/2286/R.I.17733> "Joel Lynn Ph. D. Dissertation"
 [HinkelPhD]: <http://hdl.handle.net/2286/mgqa3h74y0l> "Natalie Hinkel Ph. D. Dissertation"
 [WrightMS]: <http://1drv.ms/1wLWgpG> "Jeremy Wright Masters Thesis"
+[KumarPhD]: <http://hdl.handle.net/2286/R.I.26899> "Avishek Kumar Ph. D. Dissertation"
 
 ### Current status of automated build
 
