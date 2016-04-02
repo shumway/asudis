@@ -82,7 +82,7 @@ letterpaper}%,showframe,showcrop}
   \begin{center}
     \singlespace
 	A \@paperType\ Presented in Partial Fulfillment\\
-	of the Requirement for the Degree\\
+	of the Requirements for the Degree\\
 	\@degreeName
   \end{center}
   \vspace{\tenblanklines}
@@ -126,7 +126,7 @@ letterpaper}%,showframe,showcrop}
 \newenvironment{acknowledgements}{
   \begin{center}
     \doublespace
-    ACKNOWLEDGEMENTS
+    ACKNOWLEDGMENTS
   \end{center}
 } {
   \clearpage
@@ -241,7 +241,7 @@ letterpaper}%,showframe,showcrop}
                         \refstepcounter{chapter}%
                         \typeout{\@chapapp\space\thechapter.}%
                         \addcontentsline{toc}{chapter}%
-                        {\protect\numberline{\thechapter}#1}%
+                        {\protect\numberline{\thechapter}{\texorpdfstring{\MakeUppercase{#1}}{}}}%
                     \else
                         \addcontentsline{toc}{chapter}{#1}%
                     \fi
