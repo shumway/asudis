@@ -75,6 +75,10 @@
 \renewcommand{\chaptername}{APPENDIX}
 \addtocontents{toc}{APPENDIX \par}
 \appendix
+% Headers for TOC pages involving only appendices should have the left-heading
+% "APPENDIX", instead of "CHAPTER"
+\addtocontents{toc}{%
+    \protect\afterpage{\protect\lhead{APPENDIX}\protect\rhead{Page}}}
 \include{appendix1}
 \include{vita}
 \end{document}
